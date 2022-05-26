@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial 2b: Single-Point Visualizations &#8212; CTSM Mini-tutorial 2022</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial 2c - Code Modifications (Workflow + Simulation)" href="Day2c_CodeModification.html" />
+    <link rel="prev" title="Tutorial 2a: Running a generic single-point case" href="Day2a_GenericSinglePoint.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/ncar_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CTSM Mini-tutorial 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0a_GitStarted.html">
+   Tutorial 0a:
+   <em>
+    CTSM, CESM-Lab, &amp; Git
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0b_NEON_Simulation_Tutorial.html">
+   Tutorial 0b:
+   <em>
+    CTSM Simulations at NEON Tower Sites
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Global Simulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1a_GlobalCase.html">
+   Tutorial 1a:
+   <em>
+    Global Simulations
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1b_GlobalVisualization.html">
+   Tutorial 1b:
+   <em>
+    Global Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Generic Single Point Simulation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2a_GenericSinglePoint.html">
+   Tutorial 2a:
+   <em>
+    Running a generic single-point case
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tutorial 2b:
+   <em>
+    Single-Point Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Modification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2c_CodeModification.html">
+   Tutorial 2c -
+   <em>
+    Code Modifications (Workflow + Simulation)
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2d_CodeModification_Visualization.html">
+   Tutorial 2d -
+   <em>
+    Code Modifications (Visualization)
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial FAQ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked Questions (FAQ)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day3_CreateFork.html">
+   Day 3 On your own:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Day2b_GenericSinglePoint_Visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Day2b_GenericSinglePoint_Visualization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NCAR/CTSM-Tutorial-2022/edit/master/docs/notebooks/Day2b_GenericSinglePoint_Visualization.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/NCAR/CTSM-Tutorial-2022/master?urlpath=tree/docs/notebooks/Day2b_GenericSinglePoint_Visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-this-tutorial">
+   In this tutorial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-formatting-data">
+   1. Reading and formatting data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-correct-directories-and-file-names">
+     1.1 Find the correct directories and file names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-files-load-variables">
+     1.2 Open files &amp; load variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-derived-variables-to-the-dataset">
+     1.3 Adding derived variables to the dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-and-indexing-data">
+   2. Filtering and indexing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   3. Plotting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-plots-using-xarray-and-matplotlib">
+     3.1 Easy plots using xarray and matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-in-multiple-dimensions">
+     3.2 Plotting in multiple dimensions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-relationships">
+     3.3 Visualizing Relationships
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aggregating-and-averaging">
+   4. Aggregating and averaging
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-aggregation-methods">
+     4.1 Basic aggregation methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-apply-combine">
+     4.2 Split-Apply-Combine
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial 2b: Single-Point Visualizations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-this-tutorial">
+   In this tutorial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-formatting-data">
+   1. Reading and formatting data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-correct-directories-and-file-names">
+     1.1 Find the correct directories and file names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-files-load-variables">
+     1.2 Open files &amp; load variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-derived-variables-to-the-dataset">
+     1.3 Adding derived variables to the dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-and-indexing-data">
+   2. Filtering and indexing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting">
+   3. Plotting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-plots-using-xarray-and-matplotlib">
+     3.1 Easy plots using xarray and matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-in-multiple-dimensions">
+     3.2 Plotting in multiple dimensions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-relationships">
+     3.3 Visualizing Relationships
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aggregating-and-averaging">
+   4. Aggregating and averaging
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-aggregation-methods">
+     4.1 Basic aggregation methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-apply-combine">
+     4.2 Split-Apply-Combine
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-2b-single-point-visualizations">
+<h1>Tutorial 2b: <em>Single-Point Visualizations</em><a class="headerlink" href="#tutorial-2b-single-point-visualizations" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is an introduction to analyzing results from a single-point simulation.  It uses results from the case you ran in the 2a Tutorial, but you don’t have to wait for those runs to complete before doing this tutorial too. We’ve prestaged model results from this simulation in a shared directory. This way, you can get started on analyzing simulations results before your simulations finish running. We also ran this case for longer (10 years instead of 1), so that we have more data to work with.</p>
+<div class="section" id="in-this-tutorial">
+<h2>In this tutorial<a class="headerlink" href="#in-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<p>The tutorial has several objectives:</p>
+<ol class="simple">
+<li><p>Increase familiarity with Jupyter Notebooks</p></li>
+<li><p>Increase knowledge of python packages and their utilities</p></li>
+<li><p>Visualize output from a single-point CTSM simulation.</p></li>
+</ol>
+<hr class="docutils" />
+<p><em>As in other visualization notebook, this should be run in a Python3 kernel</em></p>
+<p><em>We’ll start by loading some packages</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<p><b>NOTE:</b>  This example largely uses features of xarray and
+matplotlib packages. We won’t go into the basics
+of python or features in these packages, but there are lots of
+resources to help get you started. Some of these are listed below.</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ncar.github.io/python-tutorial/tutorials/yourfirst.html">NCAR python tutorial</a>, which introduces python, the conda package manager, and more on github.</p></li>
+<li><p><a class="reference external" href="https://ncar.github.io/esds/blog/tag/python-tutorial-series/">NCAR ESDS tutorial series</a>, features several recorded tutorials on a wide variety of topics.</p></li>
+<li><p><a class="reference external" href="https://geocat-examples.readthedocs.io/en/latest/">GeoCAT examples</a>, with some nice plotting examples</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="reading-and-formatting-data">
+<h2>1. Reading and formatting data<a class="headerlink" href="#reading-and-formatting-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-the-correct-directories-and-file-names">
+<h3>1.1 Find the correct directories and file names<a class="headerlink" href="#find-the-correct-directories-and-file-names" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/scratch/data/day2/&#39;</span>       <span class="c1"># path to archived simulations</span>
+<span class="n">case</span> <span class="o">=</span> <span class="s1">&#39;I2000_CTSM_singlept&#39;</span>       <span class="c1"># case name</span>
+<span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># look at 10 years of data (python won&#39;t count the last year in the list, here 2011)</span>
+<span class="n">months</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>     <span class="c1"># we want all months (again, python will go up to, but not including month 13)</span>
+
+<span class="c1"># build a list of file names based on the year and month</span>
+<span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">case</span><span class="si">}</span><span class="s2">.clm2.h0.</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.nc&quot;</span>
+              <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span> <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">]</span>
+
+<span class="c1"># create their full path</span>
+<span class="n">full_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="s1">&#39;lnd/hist&#39;</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span> <span class="k">for</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">file_names</span><span class="p">]</span>
+
+<span class="c1"># print the last file in our list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_paths</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+These are the raw history files that CTSM writes out.  
+By default, they include grid cell averaged monthly means for different state and flux variables.
+<br><br>
+Typically we post-process these data to generate single variable time series for an experiment. 
+This means that the full time series of model output for each variable, like rain, air temperature, or latent heat flux, are each in their own file.
+A post-processing tutorial will be available at a later date, but for now we'll just read in the monthly history files described above.
+</div></div>
+<div class="section" id="open-files-load-variables">
+<h3>1.2 Open files &amp; load variables<a class="headerlink" href="#open-files-load-variables" title="Permalink to this headline">¶</a></h3>
+<p>This is done with the xarray function <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code></p>
+<p>To make this go faster, we’re going to preprocess the data so we’re just reading the variables we want to look at.</p>
+<div class="alert alert-block alert-info">
+    <b>TIP:</b> If you want to look at other variables, the <b>fields</b> variable in the cell below is where you can modify what we're reading off of the CTSM and CTSM-FATES history files.
+</div>
+<p>As in our Day 1 tutorial, we will begin by looking at ‘all sky albedo’, which is the ratio of reflected to incoming solar radiation (<strong>FSR/FSDS</strong>).
+Other intereresting variables might include latent heat flux (<strong>EFLX_LH_TOT</strong>) or gross primary productivity (<strong>GPP</strong>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the history variables to read in</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FSR&#39;</span><span class="p">,</span> <span class="s1">&#39;FSDS&#39;</span><span class="p">,</span> <span class="s1">&#39;GPP&#39;</span><span class="p">,</span> <span class="s1">&#39;EFLX_LH_TOT&#39;</span><span class="p">,</span> <span class="s1">&#39;FCEV&#39;</span><span class="p">,</span> <span class="s1">&#39;FCTR&#39;</span><span class="p">,</span> <span class="s1">&#39;FGEV&#39;</span><span class="p">,</span> <span class="s1">&#39;ELAI&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;H2OSOI&#39;</span><span class="p">,</span> <span class="s1">&#39;HR&#39;</span><span class="p">,</span> <span class="s1">&#39;TBOT&#39;</span><span class="p">,</span> <span class="s1">&#39;TSOI&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">preprocess</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">fields</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Selects the variables we want to read in </span>
+<span class="sd">       Drops lndgrid because we are on a single point&#39;&#39;&#39;</span>
+    
+    <span class="k">return</span> <span class="n">ds</span><span class="p">[</span><span class="n">fields</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lndgrid</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">fix_time</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Does a quick fix to adjust time vector for monthly data&#39;&#39;&#39;</span>
+    <span class="n">nmonths</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">yr0</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time.year&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">cftime_range</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">yr0</span><span class="p">),</span> <span class="n">periods</span><span class="o">=</span><span class="n">nmonths</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;MS&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds</span>
+
+
+<span class="c1"># open the dataset -- this may take a bit of time </span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">fix_time</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">full_paths</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                <span class="n">preprocess</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">preprocess</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- your data have been read in -- &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Printing information about the dataset is helpful for understanding your data.</strong></p>
+<ul class="simple">
+<li><p><em>What dimensions do your data have?</em></p></li>
+<li><p><em>What are the coordinate variables?</em></p></li>
+<li><p><em>What variables are we looking at?</em></p></li>
+<li><p><em>Is there other helpful information, or are there attributes in the dataset we should be aware of?</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell will print information about the dataset</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also print information about the variables in your dataset. The example below prints information about one of the data variables we read in. You can modify this cell to look at some of the other variables in the dataset.</p>
+<p><em>What are the units, long name, and dimensions of your data?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">FSDS</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+    <b>Tip:</b> In <i>xarray</i> you can access variables and coordinates using dot notation (<code>ds.ASA</code>) or using brackets with the variable or coordinates in quotes (<code> ds['ASA']</code>).
+</div></div>
+<div class="section" id="adding-derived-variables-to-the-dataset">
+<h3>1.3 Adding derived variables to the dataset<a class="headerlink" href="#adding-derived-variables-to-the-dataset" title="Permalink to this headline">¶</a></h3>
+<p>As in Day 1, we will calculate the all sky albedo (ASA). Remember from above that this is the ratio of reflected to incoming solar radiation (<strong>FSR/FSDS</strong>).
+We will add this as a new variable in the dataset (which requires using quotes; e.g., <code class="docutils literal notranslate"><span class="pre">ds['ASA']</span></code>) and add appropriate metadata.</p>
+<p><em>When doing calculations, it is important to avoid dividing by zero. Use the <code class="docutils literal notranslate"><span class="pre">.where</span></code> function for this purpose</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;ASA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">FSR</span><span class="o">/</span><span class="n">ds</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">FSDS</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;ASA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;unitless&#39;</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;ASA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;All sky albedo&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="filtering-and-indexing-data">
+<h2>2. Filtering and indexing data<a class="headerlink" href="#filtering-and-indexing-data" title="Permalink to this headline">¶</a></h2>
+<p><em>xarray</em> allows for easy subsetting and filtering using the <code class="docutils literal notranslate"><span class="pre">.sel</span></code> and <code class="docutils literal notranslate"><span class="pre">.isel</span></code> functions. <code class="docutils literal notranslate"><span class="pre">.sel</span></code> filters to exact (or nearest neighbor) values, whereas <code class="docutils literal notranslate"><span class="pre">.isel</span></code> filters to an index.</p>
+<p>Let’s filter to a specific date. Note that because our output was monthly and at one latitude and longitude point, this should only give us one point of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter to specific date</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;2001-01-01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also filter to a date range using the <code class="docutils literal notranslate"><span class="pre">.slice</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter by a date range</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2001-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2001-06-01&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also filter to a whole year:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2001&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we wanted to select the first time instance, we would use the <code class="docutils literal notranslate"><span class="pre">.isel</span></code> function. Note that the <code class="docutils literal notranslate"><span class="pre">.values</span></code> function returns an array with just the values for <code class="docutils literal notranslate"><span class="pre">FSDS</span></code> in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grab the first value of the incident solar radiation</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">FSDS</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also filter by other coordinates, like <code class="docutils literal notranslate"><span class="pre">levsoi</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">levsoi</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>For more information about filtering and indexing data see the <a class="reference external" href="https://xarray.pydata.org/en/v0.11.0/indexing.html">xarray documentation</a>.</em></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="plotting">
+<h2>3. Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="easy-plots-using-xarray-and-matplotlib">
+<h3>3.1 Easy plots using xarray and matplotlib<a class="headerlink" href="#easy-plots-using-xarray-and-matplotlib" title="Permalink to this headline">¶</a></h3>
+<p>As shown previously, <em>xarray</em> provides built-in plotting functions. For a quick inspection of albedo, we can use <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> to see it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+    The package <i> xarray </i> automatically sets the x and y axis names based on the metadata/attributes that are set for each variable. Notice that above we set the <code>long_name</code> and <code>units</code> for our new variable <code>ASA</code>, which is how <i>xarray</i> knew what to put in the y-axis label.
+</div>
+<p>We can also just plot one year of data (2001) from the simulation, selecting the year using the <code class="docutils literal notranslate"><span class="pre">.sel</span></code> function. Note we also changed the color and marker for this plot.</p>
+<p><em>More plotting examples are on the <a class="reference external" href="https://docs.xarray.dev/en/latest/user-guide/plotting.html">xarray web site</a></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot multiple graphs by using the keyword <code class="docutils literal notranslate"><span class="pre">ax</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">axes</span></code> is an array we create consisting of a left and right axis created with <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="p">;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if we wanted to compare years? We can start by creating columns for our years. The <code class="docutils literal notranslate"><span class="pre">time.dt</span></code> accessor allows us to access DateTime information. Next we will create a <code class="docutils literal notranslate"><span class="pre">groupby</span></code> object across our years. We will use this grouping to plot each year.</p>
+<p><em>For more information about working with time in xarray, see the <a class="reference external" href="https://xarray.pydata.org/en/v0.11.0/time-series.html">xarray documentation</a>.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create month and year columns</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;month_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b&quot;</span><span class="p">)</span>
+
+<span class="c1"># group by year</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot each year</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">group</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">month_name</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">ASA</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">count</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Month&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Albedo [unitless]&quot;</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also plot a histogram across all years from the summer (June, July, and August). This is done by using <code class="docutils literal notranslate"><span class="pre">.dt</span></code> and the <code class="docutils literal notranslate"><span class="pre">.isin</span></code> accessors to subset the data (<code class="docutils literal notranslate"><span class="pre">time.dt.month.isin([6,</span> <span class="pre">7,</span> <span class="pre">8])</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">ASA</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])))</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-in-multiple-dimensions">
+<h3>3.2 Plotting in multiple dimensions<a class="headerlink" href="#plotting-in-multiple-dimensions" title="Permalink to this headline">¶</a></h3>
+<p>When the data is two-dimensional, by default <em>xarray</em> calls <code class="docutils literal notranslate"><span class="pre">xarray.plot.pcolormesh()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pcolormesh plot</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2001&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">H2OSOI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The depth to bedrock for this gridcell is ~ 4 meters, which means no soil moisture or soil temperature are calculated for deeper soil horizons.</p>
+<p>You can see this by running the following code block, or entering it into the terminal (see <code class="docutils literal notranslate"><span class="pre">zbedrock</span></code> all the way at the end of the <code class="docutils literal notranslate"><span class="pre">ncdump</span></code> output):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ncdump -v zbedrock /scratch/<span class="nv">$USER</span>/my_subset_data/surfdata_*
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also make a contour plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">H2OSOI</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<b>CHALLENGE:</b> Instead of a contour plot, can you plot the volumetric soil water (<code>H2OSOI</code>) for year 2001 as a linegraph, where each line is a different <code>levsoi</code> value? (<i> Hint: check out the <code>hue</code> parameter for plotting in xarray</i>).
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot your graph here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizing-relationships">
+<h3>3.3 Visualizing Relationships<a class="headerlink" href="#visualizing-relationships" title="Permalink to this headline">¶</a></h3>
+<p>Plotting can be useful for looking at relationships between different variables. What do you expect the relationship between latent heat flux and GPP to be? Below we are breaking up the data by season (<code class="docutils literal notranslate"><span class="pre">time.dt.season</span></code> is a built-in accessor).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">season</span>
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;season&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">EFLX_LH_TOT</span><span class="p">,</span> <span class="n">group</span><span class="o">.</span><span class="n">GPP</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Latent Heat Flux [W m$^{-2}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;GPP [gC m$^{-2}$ s$^{-1}$]&quot;</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Questions:</strong></p>
+<ul class="simple">
+<li><p>How is albedo related to GPP?</p></li>
+<li><p>How does this relationship play out over different seasons?</p></li>
+</ul>
+<p><strong>What other relationships can you elucidate from these simulations?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot some relationships here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="aggregating-and-averaging">
+<h2>4. Aggregating and averaging<a class="headerlink" href="#aggregating-and-averaging" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-aggregation-methods">
+<h3>4.1 Basic aggregation methods<a class="headerlink" href="#basic-aggregation-methods" title="Permalink to this headline">¶</a></h3>
+<p>Often we will want to aggregate our simulations from monthly to yearly or larger sums or averages. There are various ways to do this using <em>xarray</em>. A very common step would be to apply some function over the whole dataset, such as <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code>, or <code class="docutils literal notranslate"><span class="pre">max()</span></code>. Let’s explore some of these methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the average GPP across the whole time series</span>
+<span class="c1"># NOTE these values are not weighted by the number of days in each month.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also calculate the average GPP for a specific year, weighting by the number of days in each month and coverting to different units.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate GPP for year 2005</span>
+<span class="c1"># weight by the number of days in the month (non-leap years)</span>
+<span class="n">days_in_month</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span>
+<span class="n">gpp_pm</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2005&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">GPP</span><span class="o">*</span><span class="n">days_in_month</span><span class="o">/</span><span class="mf">365.</span>
+      
+<span class="c1"># convert from GPP in gC/m^2/s to gC/m^2/year (x 60 seconds per minute x 60 minutes per hour x 24 hours per day x 365 days per year)</span>
+<span class="n">gpp_pm</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mf">86400.</span> <span class="o">*</span> <span class="mf">365.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Can you find the maximum soil volumetric water content for the soil at 0.26 m?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-apply-combine">
+<h3>4.2 Split-Apply-Combine<a class="headerlink" href="#split-apply-combine" title="Permalink to this headline">¶</a></h3>
+<p>You saw in our plotting above that we used <em>xarray</em>’s <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> function to group our dataset by a specific variable (in that instance, years). This <code class="docutils literal notranslate"><span class="pre">groupy</span></code> operation allows us to aggregate our data conditionally on some coordinate label or group. This then allows us to perform <strong>split / apply / combine</strong> methods on <em>xarray</em> DataArrays and Datasets:</p>
+<ul class="simple">
+<li><p><strong>Splitting</strong> the dataset into groups based on some criteria</p></li>
+<li><p><strong>Applying</strong> a function to each of those groups (e.g. aggregating, performing a transform, or filtering)</p></li>
+<li><p><strong>Combining</strong> the results back into one data structure</p></li>
+</ul>
+<p>Let’s use this methodology to remove seasonality from our dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate temperature in Celsius</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;tair&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">TBOT</span> <span class="o">-</span> <span class="mf">273.15</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;tair&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;degrees Celsius&#39;</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;tair&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;air temperature&#39;</span>
+
+<span class="c1"># plot temperature across whole time series</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">tair</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we will split the data by month:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">tair</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can apply a calculation to each group - either an aggregation function, which will reduce the size of the group, or a transformation, which will preserve the group’s full size. Here we will take an average. Notice that the dimensions are now 1 x 12, because we have averaged across all years for each month.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split-apply-combine</span>
+<span class="n">t_clim</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">tair</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">t_clim</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_clim</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we combine steps we can use these methods to remove the seasonality from our original dataset. Note here that the dataset is now 1 x 120 in dimension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gb</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">tair</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+<span class="n">t_anom</span> <span class="o">=</span> <span class="n">gb</span> <span class="o">-</span> <span class="n">gb</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">t_anom</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_anom</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also calculate rolling means using the <code class="docutils literal notranslate"><span class="pre">rolling</span></code> function. Here we will calculate a 6-month rolling average of GPP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mv_avg</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mv_avg</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;6-month moving average&#39;</span><span class="p">,</span> <span class="s1">&#39;monthly data&#39;</span><span class="p">])</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-warning">
+<b>CHALLENGE:</b> Calculate the average seasonal GPP values.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate value here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Day2a_GenericSinglePoint.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorial 2a: <em>Running a generic single-point case</em></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Day2c_CodeModification.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial 2c - <em>Code Modifications (Workflow + Simulation)</em></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Negin Sobhani, Danica Lombardozzi, Adrianna Foster, Will Wieder<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1438 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial 2d - Code Modifications (Visualization) &#8212; CTSM Mini-tutorial 2022</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently Asked Questions (FAQ)" href="../faq.html" />
+    <link rel="prev" title="Tutorial 2c - Code Modifications (Workflow + Simulation)" href="Day2c_CodeModification.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/ncar_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CTSM Mini-tutorial 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0a_GitStarted.html">
+   Tutorial 0a:
+   <em>
+    CTSM, CESM-Lab, &amp; Git
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0b_NEON_Simulation_Tutorial.html">
+   Tutorial 0b:
+   <em>
+    CTSM Simulations at NEON Tower Sites
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Global Simulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1a_GlobalCase.html">
+   Tutorial 1a:
+   <em>
+    Global Simulations
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1b_GlobalVisualization.html">
+   Tutorial 1b:
+   <em>
+    Global Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Generic Single Point Simulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2a_GenericSinglePoint.html">
+   Tutorial 2a:
+   <em>
+    Running a generic single-point case
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2b_GenericSinglePoint_Visualization.html">
+   Tutorial 2b:
+   <em>
+    Single-Point Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Modification
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2c_CodeModification.html">
+   Tutorial 2c -
+   <em>
+    Code Modifications (Workflow + Simulation)
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tutorial 2d -
+   <em>
+    Code Modifications (Visualization)
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial FAQ
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked Questions (FAQ)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day3_CreateFork.html">
+   Day 3 On your own:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Day2d_CodeModification_Visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Day2d_CodeModification_Visualization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NCAR/CTSM-Tutorial-2022/edit/master/docs/notebooks/Day2d_CodeModification_Visualization.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/NCAR/CTSM-Tutorial-2022/master?urlpath=tree/docs/notebooks/Day2d_CodeModification_Visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-this-tutorial">
+   In this tutorial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-our-python-packages">
+   1. Load our python packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-and-explore-ctsm-data">
+   2. Load and explore CTSM data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-data-from-unmodified-ctsm-simulations">
+     2.1 Load data from unmodified CTSM simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-data-from-modified-ctsm-simulations">
+     2.2 Load data from modified CTSM simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-modified-and-unmodified-simulations">
+     2.3 Compare modified and unmodified simulations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-neon-tower-observation-data">
+   3. Explore NEON Tower Observation Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-neon-data">
+     3.1 Download NEON data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-neon-data">
+     3.2 Load NEON data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-neon-data">
+     3.3 Inspect NEON data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-clm-and-neon-data">
+   4. Compare CLM and NEON data¶
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-all-data">
+     4.1 Format all data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-gpp-time-series-daily-average">
+     4.2 Plotting GPP Time Series (Daily Average)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#questions-to-consider">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-extract-and-save-your-data-in-csv-format">
+     4.3 [Optional] Extract and save your data in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .csv
+      </span>
+     </code>
+     format:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-clm-and-neon-latent-heat-flux">
+   5. Compare CLM and NEON latent heat flux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-latent-heat-flux">
+     5.1 What is latent heat flux?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monthly-averages-component-fluxes-of-latent-heat-flux">
+     5.2: Monthly Averages &amp; Component Fluxes of Latent Heat Flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#annual-correlations">
+     5.3 Annual Correlations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       <strong>
+        Questions to consider
+       </strong>
+       :
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-can-you-make-a-similar-plot-for-the-modified-simulation">
+       <strong>
+        Challenge:
+       </strong>
+       Can you make a similar plot for the modified simulation?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial 2d - Code Modifications (Visualization)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-this-tutorial">
+   In this tutorial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-our-python-packages">
+   1. Load our python packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-and-explore-ctsm-data">
+   2. Load and explore CTSM data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-data-from-unmodified-ctsm-simulations">
+     2.1 Load data from unmodified CTSM simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-data-from-modified-ctsm-simulations">
+     2.2 Load data from modified CTSM simulations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-modified-and-unmodified-simulations">
+     2.3 Compare modified and unmodified simulations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-neon-tower-observation-data">
+   3. Explore NEON Tower Observation Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-neon-data">
+     3.1 Download NEON data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-neon-data">
+     3.2 Load NEON data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-neon-data">
+     3.3 Inspect NEON data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-clm-and-neon-data">
+   4. Compare CLM and NEON data¶
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-all-data">
+     4.1 Format all data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-gpp-time-series-daily-average">
+     4.2 Plotting GPP Time Series (Daily Average)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#questions-to-consider">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-extract-and-save-your-data-in-csv-format">
+     4.3 [Optional] Extract and save your data in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .csv
+      </span>
+     </code>
+     format:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-clm-and-neon-latent-heat-flux">
+   5. Compare CLM and NEON latent heat flux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-latent-heat-flux">
+     5.1 What is latent heat flux?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monthly-averages-component-fluxes-of-latent-heat-flux">
+     5.2: Monthly Averages &amp; Component Fluxes of Latent Heat Flux
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       <strong>
+        Questions to consider:
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#annual-correlations">
+     5.3 Annual Correlations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       <strong>
+        Questions to consider
+       </strong>
+       :
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#challenge-can-you-make-a-similar-plot-for-the-modified-simulation">
+       <strong>
+        Challenge:
+       </strong>
+       Can you make a similar plot for the modified simulation?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-2d-code-modifications-visualization">
+<h1>Tutorial 2d - <em>Code Modifications (Visualization)</em><a class="headerlink" href="#tutorial-2d-code-modifications-visualization" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is an introduction to analyzing results from your code modifications for the NEON Konza Prairie simulation. It uses results from the case you ran in the Day0b and Day2c tutorials, but you don’t have to wait for those runs to complete before doing this tutorial. We’ve pre-staged model results from this simulation in a shared directory so that you can analyze results of your simulations regardless of whether they’ve completed.</p>
+<p>You can also check <a class="reference external" href="https://ncar.github.io/ncar-neon-books/notebooks/NEON_Visualization_Tutorial.html">NEON visualization</a> tutorial for more advanced visualization features for NEON tower site simulations.</p>
+<div class="section" id="in-this-tutorial">
+<h2>In this tutorial<a class="headerlink" href="#in-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<p>The tutorial has several objectives:</p>
+<ol class="simple">
+<li><p>Increase familiarity with <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p></li>
+<li><p>Increase knowledge of python packages and their utilities</p></li>
+<li><p>Compare results from original code with the modified code for a NEON tower.</p></li>
+</ol>
+<hr class="docutils" />
+<div class="alert alert-block alert-info">
+<b>NOTE:</b> In Day 2c, executable code blocks used a Bash shell or had to be executed on the command-line.  In this tutorial, we will be using Python code, and you should directly execute the contents of code blocks by running individual cells in this Jupyter notebook, similar to the Day0b <i>Run NEON</i>, Day1b <i>GlobalVisualization</i>, and Day2b <i>GenericGinglePoint_Visualization</i> tutorials.
+</div>
+<hr class="docutils" />
+<p>There are countless ways of analyzing and processing model data. This tutorial uses Matplotlib, a comprehensive data visualization and plotting library for Python. For more information on Matplotlib, please see the <a class="reference external" href="https://matplotlib.org/stable/users/index.html">User’s Guide</a>.</p>
+</div>
+<div class="section" id="load-our-python-packages">
+<h2>1. Load our python packages<a class="headerlink" href="#load-our-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>Here we are importing python package and libraries we will use to analyze these simulations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import Libraries</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span><span class="p">,</span> <span class="n">expanduser</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="kn">from</span> <span class="nn">neon_utils</span> <span class="kn">import</span> <span class="n">download_eval_files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before diving in, we need to specify the NEON site that you simulated in the cell below.</p>
+<p><em>The tutorial is currently set to use the KONZ site, which is the site we recommended in the Day0b_NEON_Simulation_Tutorial and Day2c_CodeModification tutorials. If you ran simulations for a different tower site, please change the 4-character site name in quotes below to the same as your simulation.</em></p>
+<p>For simplicity, we focus on analyzing and evaluating a single year of data. <p>
+The code below uses data for <strong>2018</strong>, but data are available through this year. You can select a different year by changing the year in the quotes below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Change the 4-character NEON site below to point to your NEON site:</span>
+<span class="n">neon_site</span> <span class="o">=</span> <span class="s2">&quot;KONZ&quot;</span>
+
+<span class="c1"># Select a year for analysis</span>
+<span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;2018&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-and-explore-ctsm-data">
+<h2>2. Load and explore CTSM data<a class="headerlink" href="#load-and-explore-ctsm-data" title="Permalink to this headline">¶</a></h2>
+<p>When a simulation completes, the data are transferred to an archive directory. In this directory, there are files that include data for every day of the simulation, as well as files that average model variables monthly.</p>
+<p>Run the cell below to see a subset of the files listed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls ~/scratch/CLM-NEON-phenologychange/archive/<span class="o">{</span>neon_site<span class="o">}</span>.transient/lnd/hist/*2018*.nc <span class="p">|</span>head -n <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note:</strong> you won’t see these files if your simulation from 2c has not finished.</p>
+<p>The NEON tower simulations generate two types of files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*h0*</span></code>: Variables that are averaged monthly. One file is available for every month of the simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*h1*</span></code>: Variables that are recorded every 30 minutes. Values are aggregated into one file for each day of the simulation. Each file includes 48 data points.</p></li>
+</ul>
+<p><strong>Note:</strong> Only a subset of CLM variables are included on the <code class="docutils literal notranslate"><span class="pre">*h1*</span></code> files, with many more variables included on the monthly-averaged <code class="docutils literal notranslate"><span class="pre">*h0*</span></code> files. A full list of variables that are simulated by CLM is available <a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_nofates.html">on this website</a>.</p>
+<div class="alert alert-block alert-info">
+<b>TIP:</b> For future simulations you can add or remove history file output by modifying the list of variables in <i>hist_fincl2</i> found in your <i>user_nl_clm</i> file (e.g. ~/scratch/CLM-NEON-phenologychange/KONZ.transient/user_nl_clm)
+</div>
+<hr class="docutils" />
+<div class="section" id="load-data-from-unmodified-ctsm-simulations">
+<h3>2.1 Load data from unmodified CTSM simulations<a class="headerlink" href="#load-data-from-unmodified-ctsm-simulations" title="Permalink to this headline">¶</a></h3>
+<p>Here, we want to read and analyze the data from the original (unmodified) CTSM code.
+The below code lists the 30-minute (.h1.) CTSM files for 2018:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pre-staged simulation:</span>
+<span class="n">sim_path</span> <span class="o">=</span> <span class="s2">&quot;/scratch/data/day2/KONZ.transient/lnd/hist/&quot;</span>
+<span class="n">sim_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sim_path</span><span class="p">,</span><span class="n">neon_site</span><span class="o">+</span><span class="s2">&quot;.transient.clm2.h1.&quot;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot;*.nc&quot;</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All simulation files: [&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sim_files</span><span class="p">),</span> <span class="s2">&quot;files]&quot;</span><span class="p">)</span>
+<span class="c1">## for brevity we&#39;ll just print the first 20 files</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">sim_files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let’s read and load CTSM history files into memory.</p>
+<p>For this purpose, we will use <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code> function, which opens up multiple netcdf files at the same time into one xarray Dataset. You can find more information about this function <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.open_mfdataset.html">here</a>.</p>
+<p><strong>Note:</strong> there are many files, so this will take about a minute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ds_ctsm_orig</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">sim_files</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;by_coords&#39;</span><span class="p">,</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reading original simulation files took:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next step, exploring the data, is not required, but will allow you to explore the python dataset we just created and become familiar with the data structure.</p>
+<p>Run the below cell to find more information about the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_orig</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the output, you can click on Dimensions, Coordinates, Data Variables, and Attributes to expand and see the details and metadata associated with this dataset.</p>
+<p>If you click on Data Variables, you will see a list of all the available variables. You can click on the ‘note’ icon at the right end of the line for each variable to see a description of the variable (the long_name) and its units, as well as other information. Here are a few questions to consider:</p>
+<p>Questions to consider</p>
+<ol class="simple">
+<li><p>What variables are available in the dataset?</p></li>
+<li><p>What is the long_name and unit of the variable FSH?</p></li>
+<li><p>Can you find the dimensions of this variable?</p></li>
+</ol>
+<div class="alert alert-block alert-info">
+<p><b>💡 Tip: </b>  Xarray has built-in plotting functions. For quick inspection of a variable, we can use .plot() to see it. Xarray plotting functionality is a thin wrapper around the popular <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library.</p>
+</div><p>Let’s quickly inspect GPP from original simulation.</p>
+<div class="alert alert-block alert-info">
+<p><b>Defined:</b>  Gross Primary Production (GPP) is the total amount of CO<sub>2</sub> that is fixed by plants through photosynthesis.</p>
+</div>
+<p>The code below will make a basic plot of the Gross Primary Production (GPP) variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One thing that jumps out from this plot is a dip in GPP in August-September.</p>
+<p>This points to some of the challenges in representing stress deciduous phenology used for some plant functional types (PFTs).  The <a class="reference external" href="https://escomp.github.io/ctsm-docs/versions/master/html/tech_note/Vegetation_Phenology_Turnover/CLM50_Tech_Note_Vegetation_Phenology_Turnover.html">CLM5 technote has more information about phenology</a>. Thisis an area that additional research and development can help!</p>
+<p>In this specific case, the dip in GPP is related to biases in the input data from NEON, specifically, the zero precipitation that’s reported for much of the summer.  Other nearby precipitation sensors suggest that this is not realistic and is potentially a problem with the NEON precipitation sensor. We’re working with NEON scientists to address this issue.</p>
+<p>Caveats aside, let’s go back to the results we have.</p>
+<hr class="docutils" />
+<p>You can select to plot only specific time period using <code class="docutils literal notranslate"><span class="pre">.sel</span></code> option.</p>
+<p>For example,let’s check GPP for June of 2018:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2018-06-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2018-06-30&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By now you might have noticed the units of GPP in the CTSM history output files. If not, you can check:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">units</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s change the unit from g C m<sup>-2</sup> s<sup>-1</sup> to g C m<sup>-2</sup> day<sup>-1</sup>:</p>
+<p><strong>NOTE:</strong> We’re still looking at half hourly data so converting to a daily flux is somewhat misleading, but let’s go with this (for now).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Don&#39;t accidentally run this cell more than once!</span>
+<span class="n">ds_ctsm_orig</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_ctsm_orig</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span>
+<span class="n">ds_ctsm_orig</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gC/m^2/day&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s remake the plot from above, using the new unit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2018-06-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2018-06-30&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data-from-modified-ctsm-simulations">
+<h3>2.2 Load data from modified CTSM simulations<a class="headerlink" href="#load-data-from-modified-ctsm-simulations" title="Permalink to this headline">¶</a></h3>
+<p>We’ll follow a similar procedure as above to load data from the modified CTSM simulations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pre-staged simulation results (with rain_threshold = 1):</span>
+<span class="n">sim_path</span> <span class="o">=</span> <span class="s2">&quot;/scratch/data/day2/KONZ.transient_phenologychange/lnd/hist/&quot;</span>
+
+<span class="n">sim_files_mod</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">sim_path</span><span class="p">,</span><span class="n">neon_site</span><span class="o">+</span><span class="s2">&quot;.transient.clm2.h1.&quot;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot;*.nc&quot;</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All simulation files from modified simulation: [&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sim_files_mod</span><span class="p">),</span> <span class="s2">&quot;files]&quot;</span><span class="p">)</span>
+<span class="c1"># Here, just printing the last 20 files</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">sim_files_mod</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="kc">None</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ds_ctsm_mod</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">sim_files_mod</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;by_coords&#39;</span><span class="p">,</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reading modified simulation files took:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to above, we can get a quick preliminary look at GPP from the modified simulation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_mod</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ctsm_mod</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We should change the GPP units to match the change we made in the unmodified simulations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Don&#39;t accidentally run this cell more than once!</span>
+<span class="n">ds_ctsm_mod</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_ctsm_mod</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span>
+<span class="n">ds_ctsm_mod</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gC/m^2/day&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-modified-and-unmodified-simulations">
+<h3>2.3 Compare modified and unmodified simulations<a class="headerlink" href="#compare-modified-and-unmodified-simulations" title="Permalink to this headline">¶</a></h3>
+<p>Since our code modifications change phenology, let’s start by looking at leaf area index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Default&#39;</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ds_ctsm_mod</span><span class="o">.</span><span class="n">ELAI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Phenology Mods&#39;</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question</strong>: Can you see any diffences between the two simulations? How does changing the rain threshold change patterns (onset, peak, etc.) of LAI?</p>
+<p>Next let’s inspect GPP from both simulations for April 2018. Note that we can overlay the two simulations onto a single plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can plot the two simulations together</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mf">3.5</span><span class="p">))</span>
+<span class="n">ds_ctsm_mod</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2018-04&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Phenology Mods&#39;</span><span class="p">)</span>
+<span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2018-04&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Default&#39;</span><span class="p">)</span> 
+<span class="c1"># and add a legend (this is facilitated with the &#39;label&#39; information) </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Questions</strong>:</p>
+<ol class="simple">
+<li><p>How did our code modificatons change LAI and GPP relative to the default parameterizaiton for <code class="docutils literal notranslate"><span class="pre">rain_threshold</span></code>?</p></li>
+<li><p>Can you explain why this occured in 2018?</p></li>
+<li><p>Is this modification justified, based on observations from the site? Let’s find out in the next section!</p></li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="explore-neon-tower-observation-data">
+<h2>3. Explore NEON Tower Observation Data<a class="headerlink" href="#explore-neon-tower-observation-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-neon-data">
+<h3>3.1 Download NEON data<a class="headerlink" href="#download-neon-data" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-block alert-info">
+<p><b>💡 NOTE: </b>  NEON provides observational flux data at 30 minute time intervals that we can use for model evaluation. Here, NEON data with the least restrictive quality control flag are pulled from the API for model evaluation. The data have been preprocessed by NEON, including unit conversions and gap-filling using a redundant data stream regression and/or filled using a Marginal Distribution Sampling (MDS) gap-filling technique when redundant data streams are unavailable. The data are formatted and supplied as monthly netCDF files.</p>
+</div>
+<p>The next step uses a pre-established function (<code class="docutils literal notranslate"><span class="pre">download_eval_files</span></code>) to download the NEON observational data files for the site and year specified above. The preprocessed NEON data are available for download from NEON’s GCS (Google Cloud Storage) bucket, with the full listing of available data <a class="reference external" href="https://storage.googleapis.com/neon-ncar/listing.csv">here</a>.</p>
+<p>If you would like to download all available NEON evaluation data from this site, change the word year to “all” (quotes included) below: <code class="docutils literal notranslate"><span class="pre">download_eval_files(neon_site,</span> <span class="pre">eval_dir,</span> <span class="pre">&quot;all&quot;)</span></code></p>
+<p>Run the cells below to download available NEON data from the site and year we selected above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First we need to create a directory to store the data </span>
+<span class="c1"># This cell uses bash magic, sounds exciting doesn&#39;t it?  (Nothing to worry about, just run the cell!) </span>
+<span class="o">!</span>mkdir ~/scratch/evaluation_files
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then we&#39;ll dowload the data from NEON (this is in python)</span>
+<span class="n">eval_dir</span> <span class="o">=</span> <span class="s2">&quot;/scratch/&quot;</span><span class="o">+</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;USER&#39;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;evaluation_files/&quot;</span>
+<span class="n">download_eval_files</span><span class="p">(</span><span class="n">neon_site</span><span class="p">,</span> <span class="n">eval_dir</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-neon-data">
+<h3>3.2 Load NEON data<a class="headerlink" href="#load-neon-data" title="Permalink to this headline">¶</a></h3>
+<p>Now, let’s read these downloaded evaluation files from NEON:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eval_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">eval_dir</span><span class="p">,</span><span class="n">neon_site</span><span class="p">)</span>
+<span class="n">eval_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">eval_path</span><span class="p">,</span><span class="n">neon_site</span><span class="o">+</span><span class="s2">&quot;_eval_&quot;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot;*.nc&quot;</span><span class="p">)))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">ds_eval</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">eval_files</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;by_coords&#39;</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reading all observation files took:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">,</span> <span class="s2">&quot;s.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inspect-neon-data">
+<h3>3.3 Inspect NEON data<a class="headerlink" href="#inspect-neon-data" title="Permalink to this headline">¶</a></h3>
+<p>Let’s inspect the evaluation files from NEON quickly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_eval</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check GPP from NEON files. What are the units of GPP from NEON files?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_eval</span><span class="o">.</span><span class="n">GPP</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question:</strong> Do you remember the units of GPP from CTSM simulations?</p>
+<p>We should convert the units from NEON data to match the CTSM units (keep in mind that we also converted the units).</p>
+<p>We can convert umol m<sup>-2</sup> s<sup>-1</sup> to g C m<sup>-2</sup> s<sup>-1</sup> by using molecular weight of carbon. We also want to convert time units from seconds to days.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- convert GPP units from  umolm-2s-1 to gc/m2/s</span>
+<span class="n">ds_eval</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_eval</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mf">12.01</span><span class="o">/</span><span class="mi">1000000</span><span class="p">)</span>
+
+<span class="c1">#-- convert from gc/m2/s to gc/m2/day</span>
+<span class="n">ds_eval</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_eval</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span>
+<span class="n">ds_eval</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gC/m^2/day&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_eval</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span> <span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Flux towers actually measure net ecosystem exchange, or NEE, and a statistical model is then used to estimate GPP. In evaluating CLM simulations of GPP against NEON observations, we are actually comparing a process model (CLM) against an observationally-constrained statistical model (NEON).</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="compare-clm-and-neon-data">
+<h2>4. Compare CLM and NEON data¶<a class="headerlink" href="#compare-clm-and-neon-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="format-all-data">
+<h3>4.1 Format all data<a class="headerlink" href="#format-all-data" title="Permalink to this headline">¶</a></h3>
+<p>So far, we have loaded observational data from NEON and model data from CLM for two simulations (original and modified). In this section we will compare observed and simulated GPP fluxes. You can also explore other available variables using the below code.</p>
+<div class="alert alert-danger">
+  <strong>A note about model timestamps:</strong> 
+<p>The CTSM history includes an initial 0th timestep for each model simulation. This offset in the time dimension can cause challenges when analyzing and evaluating model data if not treated properly. You may notice in the last line of the below cell, we shift the value by -1 to address this issue. In tutorials from Day1b and Day2b, we also handled it using the fix_time function when loading the netCDF files.</p>
+</div>
+<p>Run the following cells of code to extract the variables needed for this notebook and create a single dataframe that includes all the extracted variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert NEON data to a Pandas Dataframe for easier handling:</span>
+<span class="c1">#-- fields to extract</span>
+<span class="n">eval_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">,</span><span class="s1">&#39;NEE&#39;</span><span class="p">,</span><span class="s1">&#39;EFLX_LH_TOT&#39;</span><span class="p">]</span>
+
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds_eval</span><span class="o">.</span><span class="n">time</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">eval_vars</span><span class="p">:</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span> <span class="p">(</span> <span class="n">ds_eval</span><span class="p">[</span><span class="n">var</span><span class="p">])</span>     
+    <span class="n">df_all</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">=</span><span class="n">field</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can inspect the dataframe created:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_all</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert CTSM data to a Pandas Dataframe for easier handling:</span>
+<span class="n">ctsm_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">,</span><span class="s1">&#39;AR&#39;</span><span class="p">,</span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="s1">&#39;ELAI&#39;</span><span class="p">,</span><span class="s1">&#39;FCEV&#39;</span><span class="p">,</span><span class="s1">&#39;FCTR&#39;</span><span class="p">,</span><span class="s1">&#39;FGEV&#39;</span><span class="p">]</span>
+<span class="n">df_ctsm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">ds_ctsm_orig</span><span class="o">.</span><span class="n">time</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">ctsm_vars</span><span class="p">:</span>
+    <span class="n">sim_var_name</span> <span class="o">=</span> <span class="s2">&quot;sim_&quot;</span><span class="o">+</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;_orig&quot;</span>
+    <span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">ds_ctsm_orig</span><span class="p">[</span><span class="n">var</span><span class="p">])</span> 
+    <span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span><span class="o">=</span><span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="n">sim_var_name</span> <span class="o">=</span> <span class="s2">&quot;sim_&quot;</span><span class="o">+</span><span class="n">var</span><span class="o">+</span><span class="s2">&quot;_mod&quot;</span>
+    <span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">ds_ctsm_mod</span><span class="p">[</span><span class="n">var</span><span class="p">])</span>
+    <span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span><span class="o">=</span><span class="n">df_all</span><span class="p">[</span><span class="n">sim_var_name</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-gpp-time-series-daily-average">
+<h3>4.2 Plotting GPP Time Series (Daily Average)<a class="headerlink" href="#plotting-gpp-time-series-daily-average" title="Permalink to this headline">¶</a></h3>
+<p>This creates a time series plot comparing daily average latent heat flux from observations (NEON) and simulations (CLM). To start, we need to calculate the daily averages. Run the below cells of code to create the averages and plot. <em>Now our conversion of GPP to g C m<sup>-2</sup> day<sup>-1</sup> makes sense!</em></p>
+<p>First, we need to extract year, month, day and hour from time column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#-- extract year, month, day, hour information from time</span>
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;hour&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, calculate daily average:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_daily</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;day&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_daily</span><span class="p">[[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the daily averages, we will create a plot using Python’s <a class="reference external" href="https://matplotlib.org/">matplotlib package</a>.</p>
+<p>Run the below cell to create the plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;GPP&#39;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;NEON&quot;</span><span class="p">)</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sim_GPP_orig&quot;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Original&quot;</span><span class="p">)</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sim_GPP_mod&quot;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Modified&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="c1"># here keeping track of units is helpful agian!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gross Primary Production (&quot;</span><span class="o">+</span><span class="n">ds_eval</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Are the simulations and observations in the plot similar?</strong></p>
+<p>Remember that there are some problems with the precipitation data available for the model simulations that affect phenology during the summer and fall.
+Also keep in mind that NEON GPP is calculated from observed NEE using a statistical model.</p>
+<p><strong>Questions:</strong></p>
+<ol class="simple">
+<li><p>When is NEON GPP highest at this site? When is it lowest? <br></p></li>
+<li><p>Do patterns of CLM GPP match NEON data? Why or why not?</p></li>
+<li><p>How do the CLM simulations compare to NEON data <strong>in the spring</strong> for the default and modified cases?</p></li>
+<li><p>As we saw above, the modified code changed phenology so that LAI and GPP were higher earlier in the simulation. Does this change improve simulated GPP?</p></li>
+</ol>
+<hr class="docutils" />
+<p>In addition to looking at means, it is important to also look at variability, as this gives us an indication of when and where simulations are outside the range of observed values.</p>
+<p>Let’s explore variability by adding the daily standard deviation as a shaded area to the plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_daily_std</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;day&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_daily_std</span><span class="p">[[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;NEON&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_orig&#39;</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Original&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_mod&#39;</span><span class="p">],</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Modified&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">],</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;GPP&#39;</span><span class="p">]</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_orig&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;sim_GPP_orig&#39;</span><span class="p">],</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_orig&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;sim_GPP_orig&#39;</span><span class="p">]</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_mod&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;sim_GPP_mod&#39;</span><span class="p">],</span> <span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;sim_GPP_mod&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">df_daily_std</span><span class="p">[</span><span class="s1">&#39;sim_GPP_mod&#39;</span><span class="p">]</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Gross Primary Production (&quot;</span><span class="o">+</span><span class="n">ds_eval</span><span class="o">.</span><span class="n">GPP</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span><span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The standard deviation allows us to see when CLM underpredicts or overpredicts the NEON tower observations.</p>
+<div class="section" id="questions-to-consider">
+<h4><strong>Questions to consider:</strong><a class="headerlink" href="#questions-to-consider" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Do fluxes simulated by CLM with different <code class="docutils literal notranslate"><span class="pre">rain_threshhold</span></code> fall within the range of NEON tower observation variability? <br></p></li>
+<li><p>What times of year does CLM shows the best and worst performance in predicting GPP? <br></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="optional-extract-and-save-your-data-in-csv-format">
+<h3>4.3 [Optional] Extract and save your data in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format:<a class="headerlink" href="#optional-extract-and-save-your-data-in-csv-format" title="Permalink to this headline">¶</a></h3>
+<p>If you are unfamiliar with reading and using the netcdf file format that model and evaluation data are provided, you can save data different formats. The next cell of code will save the data we processed (e.g., loaded, averaged) in .csv, or comma-seperated file format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a directory to write out data</span>
+<span class="o">!</span>mkdir ~/preprocessed_data/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_dir</span> <span class="o">=</span> <span class="s2">&quot;~/preprocessed_data/&quot;</span>
+
+<span class="c1">#create the directory if it does not exist:</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">csv_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">csv_dir</span><span class="p">)</span>
+    
+<span class="n">csv_out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">csv_dir</span><span class="p">,</span> <span class="s2">&quot;preprocessed_&quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot;.csv&quot;</span><span class="p">)</span>
+<span class="n">df_all</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_out</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the .csv file was written out</span>
+<span class="o">!</span>ls ~/preprocessed_data/
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-clm-and-neon-latent-heat-flux">
+<h2>5. Compare CLM and NEON latent heat flux<a class="headerlink" href="#compare-clm-and-neon-latent-heat-flux" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will compare observed and simulated <strong>latent heat fluxes</strong>. You can also explore other available variables with this code</p>
+<div class="section" id="what-is-latent-heat-flux">
+<h3>5.1 What is latent heat flux?<a class="headerlink" href="#what-is-latent-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>Below we explore how well CLM simulates latent heat flux, which is directly observed at NEON towers. Latent heat flux is the energy for water evaporation from the ecosystem. Latent heat flux is a combination of plant transpiration, evaporation from leaf surfaces (e.g., from dew, after precipitation events, etc.), and evaporation from the soil:</p>
+<div class="math notranslate nohighlight">
+\[ Latent Heat Flux = Transpiration + Canopy Evaporation + Ground Evaporation \]</div>
+<p>Although NEON towers cannot distinguish how much each of these processes contributes to latent heat flux, CLM simulations can help us to disentangle the role of each.</p>
+<p>First we will calculate latent heat flux simulated by CLM by summing the component fluxes in the above equation. The CLM variables are:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(FCEV\)</span>: Canopy evaporation (W m<sup>-2</sup>) <br>
+<span class="math notranslate nohighlight">\(FCTR\)</span>: Canopy transpiration (W m<sup>-2</sup>) <br>
+<span class="math notranslate nohighlight">\(FGEV\)</span>: Ground evaporation (W m<sup>-2</sup>) <br></p>
+</div></blockquote>
+<p><em>Run the below cell to calculate simulated latent heat flux</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sims</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orig&#39;</span><span class="p">,</span><span class="s1">&#39;mod&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="n">sims</span><span class="p">:</span>
+    <span class="n">clm_var</span> <span class="o">=</span> <span class="s1">&#39;sim_EFLX_LH_TOT_&#39;</span><span class="o">+</span><span class="n">sim</span>
+
+    <span class="c1">#EFLX_LH_TOT = FCEV + FCTR +FGEV</span>
+    <span class="n">df_all</span> <span class="p">[</span><span class="n">clm_var</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sim_FCEV_&#39;</span><span class="o">+</span><span class="n">sim</span><span class="p">]</span> \
+                     <span class="o">+</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sim_FCTR_&#39;</span><span class="o">+</span><span class="n">sim</span><span class="p">]</span>\
+                     <span class="o">+</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;sim_FGEV_&#39;</span><span class="o">+</span><span class="n">sim</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s calculate daily averages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_daily</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;day&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_daily</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_daily</span><span class="p">[[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;EFLX_LH_TOT&#39;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;NEON&quot;</span><span class="p">)</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sim_EFLX_LH_TOT_orig&quot;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Original&quot;</span><span class="p">)</span>
+<span class="n">df_daily</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sim_EFLX_LH_TOT_mod&quot;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;CLM Modified&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Latent Heat Flux [W m$^{-2}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4><strong>Questions to consider:</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>How well does CLM simulate observed latent heat flux? What times of year does CLM overestimate or underestimate observed latent heat flux?</p></li>
+<li><p>How different are the original and modified simulations? Is one noticably more accurate than the other?</p></li>
+<li><p>Which component flux (transpiration, canopy evaporation, ground evaporation) seems most likely to contribute to the mismatch between simulations and observations?</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="monthly-averages-component-fluxes-of-latent-heat-flux">
+<h3>5.2: Monthly Averages &amp; Component Fluxes of Latent Heat Flux<a class="headerlink" href="#monthly-averages-component-fluxes-of-latent-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>Next we will disentangle whether transpiration, canopy evaporation, or ground evaporation is the dominant contribution to latent heat flux during each month using CLM data. As mentioned in section 5.1, NEON observations cannot distinguish how much each of these processes contributes to latent heat fluxes.</p>
+<p><em>Run the cell below to calculate monthly averages:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_monthly</span> <span class="o">=</span> <span class="n">df_all</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_monthly</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">]</span><span class="o">=</span><span class="mi">15</span>
+<span class="n">df_monthly</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_monthly</span><span class="p">[[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span><span class="s2">&quot;day&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Next, create a stacked bar chart showing components of simulated latent heat flux over different months.</strong></p>
+<p><em>Run the cell below to create the plot</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line_format</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Helper function to convert time label to the format of pandas line plot</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">month_name</span><span class="p">()[:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">month</span> <span class="o">==</span> <span class="s1">&#39;Jan&#39;</span><span class="p">:</span>
+        <span class="n">month</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="si">{</span><span class="n">label</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">month</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+<span class="n">df_monthly</span><span class="o">.</span><span class="n">plot</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;EFLX_LH_TOT&#39;</span> <span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span> <span class="p">,</span><span class="n">ax</span> <span class="o">=</span><span class="n">ax</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;NEON Latent Heat Flux&quot;</span><span class="p">,</span><span class="n">use_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_monthly</span><span class="p">[[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FCEV_orig&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FCTR_orig&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FGEV_orig&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="n">stacked</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">df_monthly</span><span class="p">[[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FCEV_mod&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FCTR_mod&#39;</span><span class="p">,</span><span class="s1">&#39;sim_FGEV_mod&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span> <span class="p">(</span> <span class="n">x</span><span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="n">stacked</span><span class="o">=</span><span class="s1">&#39;True&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">align</span><span class="o">=</span><span class="s1">&#39;edge&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span><span class="n">edgecolor</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="c1"># Modified case has lighter shading.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">line_format</span><span class="p">,</span> <span class="n">df_monthly</span><span class="o">.</span><span class="n">time</span><span class="p">))</span>
+
+<span class="c1">#set labels for the legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;NEON Latent Heat Flux&quot;</span><span class="p">,</span> <span class="s2">&quot;Canopy Evaporation&quot;</span><span class="p">,</span> <span class="s2">&quot;Canopy Transpiration&quot;</span><span class="p">,</span> <span class="s2">&quot;Ground Evaporation&quot;</span><span class="p">]);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Latent Heat Flux [W m$^{-2}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The monthly averages of NEON latent heat flux observation are plotted as a line on top of the barplot of CLM data for reference.  The modified case has lighter shading.</p>
+<p>Both simulations have high biases in latent heat flux in the summer.  This pattern is similar to the high GPP that we saw in earlier plots.</p>
+<div class="section" id="id2">
+<h4><strong>Questions to consider:</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Which components of latent heat flux changed by changing the rain threshhold for leaf onset? When are these changes most noticable?</p></li>
+<li><p>Which months does original CLM simulation overestimate and underestimate observed latent heat fluxes for this site?</p></li>
+<li><p>What times of year is <em>canopy transpiration</em> the largest contributor to the total CLM latent heat flux? How does it change between the two simulations?</p></li>
+<li><p>What times of year are <em>canopy evaporation</em> and <em>ground evaporation</em> important contributors to the total CLM latent heat flux?  How do these change between the two simulations?</p></li>
+<li><p>What is the dominant component flux when CLM overestimates observed latent heat fluxes? When CLM underestimates latent heat fluxes?</p></li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="annual-correlations">
+<h3>5.3 Annual Correlations<a class="headerlink" href="#annual-correlations" title="Permalink to this headline">¶</a></h3>
+<p>Scatter plots can help to describe the relationship between latent heat flux and the component transpiration and evaporation fluxes. We can look at these relationships using data from CLM simulations.</p>
+<p>First, plot annual average relationships for the original simulation.</p>
+<p><em>Run the cells below to first define a generic function that plot scatter diagrams and add a regression line, and then to generate the plots.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Defining generic function for scatter plots</span>
+<span class="k">def</span> <span class="nf">detailed_scatter</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">r_value</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">std_err</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">slope</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">intercept</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">line</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y=</span><span class="si">{:.2f}</span><span class="s1">x+</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; (R2=&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r_value</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Generating plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>  <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">detailed_scatter</span> <span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">sim_FCEV_orig</span><span class="p">,</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">sim_EFLX_LH_TOT_orig</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CLM Latent Heat [W m-2]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;CLM Canopy Evaporation [W m-2]&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">detailed_scatter</span> <span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">sim_FCTR_orig</span><span class="p">,</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">sim_EFLX_LH_TOT_orig</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CLM Latent Heat [W m-2]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;CLM Canopy Transpiration [W m-2]&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">detailed_scatter</span> <span class="p">(</span><span class="n">df_daily</span><span class="o">.</span><span class="n">sim_FGEV_orig</span><span class="p">,</span> <span class="n">df_daily</span><span class="o">.</span><span class="n">sim_EFLX_LH_TOT_orig</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;CLM Latent Heat [W m-2]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;CLM Ground Evaporation [W m-2]&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">neon_site</span><span class="o">+</span><span class="s2">&quot; Scatter Plots&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4><strong>Questions to consider</strong>:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Which component flux has the strongest relationship with total latent heat flux</p></li>
+<li><p>The plots show data for the full year. How do you think the relationships might change by season?</p></li>
+</ol>
+</div>
+<div class="section" id="challenge-can-you-make-a-similar-plot-for-the-modified-simulation">
+<h4><strong>Challenge:</strong> Can you make a similar plot for the modified simulation?<a class="headerlink" href="#challenge-can-you-make-a-similar-plot-for-the-modified-simulation" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Day2c_CodeModification.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorial 2c - <em>Code Modifications (Workflow + Simulation)</em></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../faq.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Frequently Asked Questions (FAQ)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Negin Sobhani, Danica Lombardozzi, Adrianna Foster, Will Wieder<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

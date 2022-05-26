@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3 On your own: &#8212; CTSM Mini-tutorial 2022</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Frequently Asked Questions (FAQ)" href="../faq.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/ncar_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CTSM Mini-tutorial 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0a_GitStarted.html">
+   Tutorial 0a:
+   <em>
+    CTSM, CESM-Lab, &amp; Git
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0b_NEON_Simulation_Tutorial.html">
+   Tutorial 0b:
+   <em>
+    CTSM Simulations at NEON Tower Sites
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Global Simulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1a_GlobalCase.html">
+   Tutorial 1a:
+   <em>
+    Global Simulations
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1b_GlobalVisualization.html">
+   Tutorial 1b:
+   <em>
+    Global Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Generic Single Point Simulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2a_GenericSinglePoint.html">
+   Tutorial 2a:
+   <em>
+    Running a generic single-point case
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2b_GenericSinglePoint_Visualization.html">
+   Tutorial 2b:
+   <em>
+    Single-Point Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Code Modification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2c_CodeModification.html">
+   Tutorial 2c -
+   <em>
+    Code Modifications (Workflow + Simulation)
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2d_CodeModification_Visualization.html">
+   Tutorial 2d -
+   <em>
+    Code Modifications (Visualization)
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorial FAQ
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../faq.html">
+   Frequently Asked Questions (FAQ)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 3 On your own:
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Day3_CreateFork.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Day3_CreateFork.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NCAR/CTSM-Tutorial-2022/edit/master/docs/notebooks/Day3_CreateFork.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/NCAR/CTSM-Tutorial-2022/master?urlpath=tree/docs/notebooks/Day3_CreateFork.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sharing-your-changes-with-others-pushing-changes-back-to-your-github-repository">
+   <em>
+    Sharing your changes with others &amp; pushing changes back to your GitHub Repository
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-github-account">
+   1. Create a GitHub account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-fork-from-ctsm-tutorial-2022-repository">
+   2. Create a fork from CTSM-Tutorial-2022 repository
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-do-create-a-fork">
+     To Do: Create a fork
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushing-your-changes-to-the-outside-world">
+   3. Pushing your changes to the outside world:
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Day 3 On your own:</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sharing-your-changes-with-others-pushing-changes-back-to-your-github-repository">
+   <em>
+    Sharing your changes with others &amp; pushing changes back to your GitHub Repository
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-github-account">
+   1. Create a GitHub account
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-fork-from-ctsm-tutorial-2022-repository">
+   2. Create a fork from CTSM-Tutorial-2022 repository
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-do-create-a-fork">
+     To Do: Create a fork
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushing-your-changes-to-the-outside-world">
+   3. Pushing your changes to the outside world:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="day-3-on-your-own">
+<h1>Day 3 On your own:<a class="headerlink" href="#day-3-on-your-own" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sharing-your-changes-with-others-pushing-changes-back-to-your-github-repository">
+<h2><em>Sharing your changes with others &amp; pushing changes back to your GitHub Repository</em><a class="headerlink" href="#sharing-your-changes-with-others-pushing-changes-back-to-your-github-repository" title="Permalink to this headline">¶</a></h2>
+<p><em>Note: If you plan to contribute your code developments to CTSM or the CTSM-Tutorial, you will need to use these optional steps to share your code with CTSM model developers. If you already have a GitHub account and have a CTSM fork, start at step 2.</em></p>
+<p>So far, we made a code change and saved it to a <code class="docutils literal notranslate"><span class="pre">local</span></code> branch. In reality, we usually want/need to push our changes back to GitHub so our collaborators can see, comment, or use our code modifications.
+Imagine saving your progress in a video game or in a Word document on a local computer. If you use a different computer, you can not load your progress. However, if you save your video game progress or your Word document on the cloud, you can easily access it from any computer. Nowadays, video games save your progress via a profile/account and Word documents can be saved and shared through Google or Dropbox accounts.</p>
+<p>Similarly, <strong>you need to create an account on GitHub to be able to share your changes</strong> so:</p>
+<ul class="simple">
+<li><p>you can access your code and changes from anywhere.</p></li>
+<li><p>you can share with collaborators.</p></li>
+<li><p>you can contribute back to CTSM tutorial repository.</p></li>
+</ul>
+</div>
+<div class="section" id="create-a-github-account">
+<h2>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h2>
+<p>Visit the <span class="xref myst">GitHub website</span> and create an account if you don’t already one. You can skip step this if you already have a GitHub account.</p>
+</div>
+<div class="section" id="create-a-fork-from-ctsm-tutorial-2022-repository">
+<h2>2. Create a fork from CTSM-Tutorial-2022 repository<a class="headerlink" href="#create-a-fork-from-ctsm-tutorial-2022-repository" title="Permalink to this headline">¶</a></h2>
+<p>You don’t have access to write directly to the main CTSM tutorial repository (that right is reserved for the tutorial developers), so you need to create your own copy of the repository to save your changes. For this, you will fork the CTSM tutorial repository.</p>
+<div class="alert alert-info">
+  <strong> NOTE: </strong> 
+    A fork is a copy of a repository. "Fork"ing a repository is similar to creating a branch in that it allows you to freely experiment with changes without affecting the original project. However, we recommend using your CTSM fork as an unmodified copy of CTSM tutorial repository and making changes using branches.
+</div>
+<div class="section" id="to-do-create-a-fork">
+<h3>To Do: Create a fork<a class="headerlink" href="#to-do-create-a-fork" title="Permalink to this headline">¶</a></h3>
+<p>You can create your own fork of the CTSM tutorial repository by using the fork button in the upper right corner of the CTSM tutorial reository page.</p>
+<ul class="simple">
+<li><p>Login to your GitHub account.</p></li>
+<li><p>Navigate to the original <a class="reference external" href="https://github.com/NCAR/CTSM-Tutorial-2022">CTSM tutorial repository</a>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">fork</span></code> button to create a fork of CTSM repository in your account
+<strong>NOTE:</strong> The image below is from the CTSM repository, but the GitHub interface looks the same for the tutorial repository.</p></li>
+</ul>
+<p><img alt="image3.png" src="https://github.com/NCAR/CTSM-Tutorial-2022/raw/main/images/fork_image.png" /></p>
+<p>Your forked repository will be under your account name:</p>
+<p><a class="reference external" href="https://github.com/YOUR-USER-NAME/CTSM-Tutorial-2022">https://github.com/YOUR-USER-NAME/CTSM-Tutorial-2022</a></p>
+<p>For example, for the username (wwieder) the forked repo is:</p>
+<p><a class="reference external" href="https://github.com/wwieder/CTSM-Tutorial-2022">https://github.com/wwieder/CTSM-Tutorial-2022</a></p>
+<p>You can make any modifications you’d like to your forked repository. Note that you only have to fork a respository once – it will always be connected to your GitHub account unless you delete it.</p>
+</div>
+</div>
+<div class="section" id="pushing-your-changes-to-the-outside-world">
+<h2>3. Pushing your changes to the outside world:<a class="headerlink" href="#pushing-your-changes-to-the-outside-world" title="Permalink to this headline">¶</a></h2>
+<p>To start, connect your forked repository to the computing system you are using. You can do so by using the following:</p>
+<div class="alert alert-block alert-danger">
+<p><b>WARNING!</b></p>
+<p>Please replace “YOUR_USER_NAME” in the code below with your own GitHub username (created in step 1).</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add YOUR_USER_NAME https://github.com:YOUR_USER_NAME/CTSM-Tutorial-2022.git
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, push your changes to the remote repository. Note that ‘pushing’ the changes makes the changes visible to anyone who looks at your GitHub repository, including your collaborators.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add -a
+git commit -m <span class="s1">&#39;all my notebook changes&#39;</span>
+git push YOUR_USER_NAME 
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see your changes now you can go to your fork and look for your ‘main’ branch on <span class="xref myst">github.com</span>. You should be able to see your recent changes.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../faq.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Frequently Asked Questions (FAQ)</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Negin Sobhani, Danica Lombardozzi, Adrianna Foster, Will Wieder<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
